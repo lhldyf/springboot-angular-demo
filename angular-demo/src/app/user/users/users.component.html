@@ -1,0 +1,30 @@
+<ng-template [ngIf]="userPage != null">
+  <div class="row">
+    <div class="table-responsive col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userPage.content">
+            <td>{{user.id}}</td>
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.age}}</td>
+            <td class="actions">
+              <a class="btn btn-success btn-xs" routerLink="/user/{{user.id}}">Detail</a>
+              <!-- <a class="btn btn-danger btn-xs" (click)="currentUser=user">Delete</a> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <app-pagination [table]="self" [page]="userPage"></app-pagination>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,25 @@
+<ng-template [ngIf]="user != null">
+  <h2>UserID: {{user.id}}</h2>
+  <div class="row">
+      <div class="col-md-12">
+          <p><strong>First name</strong></p>
+          <p>{{user.firstname}}</p>
+      </div>
+  
+      <div class="col-md-12">
+          <p><strong>Last name</strong></p>
+          <p>{{user.lastname}}</p>
+      </div>
+  
+      <div class="col-md-12">
+          <p><strong>Age</strong></p>
+          <p>{{user.age}}</p>
+      </div>
+  </div>
+
+  <div id="actions" class="row">
+        <div class="col-md-12">
+            <a (click)="back()" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+</ng-template>
